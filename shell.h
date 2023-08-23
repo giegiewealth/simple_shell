@@ -23,7 +23,11 @@
 #define CMD_AND 2
 #define CMD_CHAIN 3
 
+<<<<<<< HEAD
 /* for convert_number() */
+=======
+/* for cnvrt_num() */
+>>>>>>> 0bf15ae349fab10062ba030b1e6a25fc398050af
 #define CONVERT_LOWERCASE 1
 #define CONVERT_UNSIGNED 2
 
@@ -88,17 +92,30 @@ typedef struct passinfo
 	int env_changed;
 	int status;
 
+<<<<<<< HEAD
 	char **cmd_buf;	  /* pointer to cmd ; chain buffer, for memory mangement */
+=======
+	char **cmd_buf;
+/* pointer to cmd ; chain buffer, for memory mangement */
+>>>>>>> 0bf15ae349fab10062ba030b1e6a25fc398050af
 	int cmd_buf_type; /* CMD_type ||, &&, ; */
 	int readfd;
 	int histcount;
 } info_t;
+<<<<<<< HEAD
 
 #define INFO_INIT
 {
 	NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL,
 		0, 0, 0
 }
+=======
+#define INFO_INIT\
+	{                                                                           \
+		NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
+			0, 0, 0                                                             \
+	}
+>>>>>>> 0bf15ae349fab10062ba030b1e6a25fc398050af
 
 /**
  * struct builtin - contains a builtin string and related function
@@ -127,9 +144,15 @@ int loophsh(char **);
 
 /* toem_errors.c */
 void _eputs(char *);
+<<<<<<< HEAD
 int _eputchar(char);
 int _putfd(char c, int fd);
 int _putsfd(char *str, int fd);
+=======
+int eputcharsc(char);
+int _putdfdd(char c, int fd);
+int _pristngd(char *str, int fd);
+>>>>>>> 0bf15ae349fab10062ba030b1e6a25fc398050af
 
 /* toem_string.c */
 int _strlen(char *);
@@ -146,7 +169,11 @@ int _putchar(char);
 /* toem_exits.c */
 char *_strncpy(char *, char *, int);
 char *_strncat(char *, char *, int);
+<<<<<<< HEAD
 char *_strchr(char *, char);
+=======
+char *stchar_loc(char *, char);
+>>>>>>> 0bf15ae349fab10062ba030b1e6a25fc398050af
 
 /* toem_tokenizer.c */
 char **strtow(char *, char *);
@@ -160,6 +187,7 @@ void *_realloc(void *, unsigned int, unsigned int);
 /* toem_memory.c */
 int bfree(void **);
 
+<<<<<<< HEAD
 /* toem_atoi.c */
 int interactive(info_t *);
 int is_delim(char, char *);
@@ -181,6 +209,29 @@ int _myhelp(info_t *);
 /* toem_builtin1.c */
 int _myhistory(info_t *);
 int _myalias(info_t *);
+=======
+/* toem_con_atoi.c */
+int intrtv(info_t *);
+int is_delim(char, char *);
+int _isalpha(int);
+int _con_atoi(char *);
+
+/* toem_errors1.c */
+int __errorcatoiatoi(char *);
+void prnt_errmsg(info_t *, char *);
+int print_deci(int, int);
+char *cnvrt_num(long int, int, int);
+void rm_cmts(char *);
+
+/* toem_builtin.c */
+int _exitd(info_t *);
+int _chngd(info_t *);
+int _helpd(info_t *);
+
+/* toem_builtin1.c */
+int _hist(info_t *);
+int _aliasd(info_t *);
+>>>>>>> 0bf15ae349fab10062ba030b1e6a25fc398050af
 
 /*toem_getline.c */
 ssize_t get_input(info_t *);
@@ -193,6 +244,7 @@ void set_info(info_t *, char **);
 void free_info(info_t *, int);
 
 /* toem_environ.c */
+<<<<<<< HEAD
 char *_getenv(info_t *, const char *);
 int _myenv(info_t *);
 int _mysetenv(info_t *);
@@ -210,6 +262,25 @@ int write_history(info_t *info);
 int read_history(info_t *info);
 int build_history_list(info_t *info, char *buf, int linecount);
 int renumber_history(info_t *info);
+=======
+char *fetchenv(info_t *, const char *);
+int _environd(info_t *);
+int _setenv(info_t *);
+int _myukwnenv(info_t *);
+int popenv_lsts(info_t *);
+
+/* toemfetchenv.c */
+char **get_environ(info_t *);
+int _ukwnenv(info_t *, char *);
+int _setenv(info_t *, char *, char *);
+
+/* toem_history.c */
+char *fetch_histf(info_t *info);
+int wrt_hist(info_t *info);
+int rdhist(info_t *info);
+int bld_hislsts(info_t *info, char *buf, int linecount);
+int renum_hist(info_t *info);
+>>>>>>> 0bf15ae349fab10062ba030b1e6a25fc398050af
 
 /* toem_lists.c */
 list_t *add_node(list_t **, const char *, int);
@@ -226,6 +297,7 @@ list_t *node_starts_with(list_t *, char *, char);
 ssize_t get_node_index(list_t *, list_t *);
 
 /* toem_vars.c */
+<<<<<<< HEAD
 int is_chain(info_t *, char *, size_t *);
 void check_chain(info_t *, char *, size_t *, size_t, size_t);
 int replace_alias(info_t *);
@@ -233,3 +305,13 @@ int replace_vars(info_t *);
 int replace_string(char **, char *);
 
 #endif
+=======
+int chain_delimeter(info_t *, char *, size_t *);
+void check_chain_delimeter(info_t *, char *, size_t *, size_t, size_t);
+int replace_aliasToke(info_t *);
+int replace_varsToke(info_t *);
+int replace_strings(char **, char *);
+
+#endif
+
+>>>>>>> 0bf15ae349fab10062ba030b1e6a25fc398050af
