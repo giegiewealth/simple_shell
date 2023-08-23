@@ -3,10 +3,10 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-// #include <unistd.h>
+#include <unistd.h>
 #include <string.h>
 #include <sys/types.h>
-// #include <sys/wait.h>
+#include <sys/wait.h>
 #include <sys/stat.h>
 #include <limits.h>
 #include <fcntl.h>
@@ -84,7 +84,7 @@ typedef struct passinfo
 	list_t *env;
 	list_t *history;
 	list_t *alias;
-	// char **environ;
+	char **environ;
 	int env_changed;
 	int status;
 
@@ -94,11 +94,11 @@ typedef struct passinfo
 	int histcount;
 } info_t;
 
-#define INFO_INIT                                                               \
-	{                                                                           \
-		NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
-			0, 0, 0                                                             \
-	}
+#define INFO_INIT
+{
+	NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL,
+		0, 0, 0
+}
 
 /**
  * struct builtin - contains a builtin string and related function
@@ -183,7 +183,7 @@ int _myhistory(info_t *);
 int _myalias(info_t *);
 
 /*toem_getline.c */
-// ssize_t get_input(info_t *);
+ssize_t get_input(info_t *);
 int _getline(info_t *, char **, size_t *);
 void sigintHandler(int);
 
@@ -223,13 +223,13 @@ size_t list_len(const list_t *);
 char **list_to_strings(list_t *);
 size_t print_list(const list_t *);
 list_t *node_starts_with(list_t *, char *, char);
-// ssize_t get_node_index(list_t *, list_t *);
+ssize_t get_node_index(list_t *, list_t *);
 
 /* toem_vars.c */
-int chain_delimeter(info_t *, char *, size_t *);
-void check_chain_delimeter(info_t *, char *, size_t *, size_t, size_t);
-int replace_aliasToke(info_t *);
-int replace_varsToke(info_t *);
-int replace_strings(char **, char *);
+int is_chain(info_t *, char *, size_t *);
+void check_chain(info_t *, char *, size_t *, size_t, size_t);
+int replace_alias(info_t *);
+int replace_vars(info_t *);
+int replace_string(char **, char *);
 
 #endif

@@ -1,51 +1,51 @@
 #include "shell.h"
 
 /**
- * _strlen - returns the length of a string......
- * @s: the string whose length to check......
+ * _strlen - returns the length of a string
+ * @s: the string whose length to check
  *
- * Return: integer length of string......
+ * Return: integer length of string
  */
 int _strlen(char *s)
 {
-	int index = 0;
+	int i = 0;
 
 	if (!s)
 		return (0);
 
 	while (*s++)
-		index++;
-	return (index);
+		i++;
+	return (i);
 }
 
 /**
- * _strcmp - performs lexicogarphic comparison of two strangs.......
- * @string1: the first strang......
- * @string2: the second strang......
+ * _strcmp - performs lexicogarphic comparison of two strangs.
+ * @s1: the first strang
+ * @s2: the second strang
  *
- * Return: negative if string1 < string2, positive if string1 > string2, zero if string1 == string2......
+ * Return: negative if s1 < s2, positive if s1 > s2, zero if s1 == s2
  */
-int _strcmp(char *string1, char *string2)
+int _strcmp(char *s1, char *s2)
 {
-	while (*string1 && *string2)
+	while (*s1 && *s2)
 	{
-		if (*string1 != *string2)
-			return (*string1 - *string2);
-		string1++;
-		string2++;
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+		s1++;
+		s2++;
 	}
-	if (*string1 == *string2)
+	if (*s1 == *s2)
 		return (0);
 	else
-		return (*string1 < *string2 ? -1 : 1);
+		return (*s1 < *s2 ? -1 : 1);
 }
 
 /**
- * starts_with - checks if needle starts with haystack......
- * @haystack: string to search......
- * @needle: the substring to find......
+ * starts_with - checks if needle starts with haystack
+ * @haystack: string to search
+ * @needle: the substring to find
  *
- * Return: address of next char of haystack or NULL......
+ * Return: address of next char of haystack or NULL
  */
 char *starts_with(const char *haystack, const char *needle)
 {
@@ -56,11 +56,11 @@ char *starts_with(const char *haystack, const char *needle)
 }
 
 /**
- * _strcat - concatenates two strings.....
- * @dest: the destination buffer.....
- * @src: the source buffer.....
+ * _strcat - concatenates two strings
+ * @dest: the destination buffer
+ * @src: the source buffer
  *
- * Return: pointer to destination buffer.....
+ * Return: pointer to destination buffer
  */
 char *_strcat(char *dest, char *src)
 {
