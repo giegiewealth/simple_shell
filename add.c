@@ -1,12 +1,6 @@
 #include <stdio.h>
 
-/**
- * main - entry point
- * description: adding two given numbers
- * Return: 0 always
- *
- */
-int main(void)
+int alternative_main(void)
 {
 	int a;
 	int b;

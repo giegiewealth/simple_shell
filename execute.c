@@ -1,15 +1,20 @@
 #include "shell.h"
+#include <sys/types.h>
+#include <sys/wait.h>
+
 /**
- * Executes a command.
- *
- * This function takes a command string as input and executes it using
- * the appropriate system call. It parses the command and its arguments,
+ * execute_command - Execute a command.
+ * @command: The command to be executed
+ * This function takes a command string as input
+ * and executes it using
+ * the appropriate system call.
+ * It parses the command and its arguments,
  * then attempts to execute it.
- *
- * @param command The command string to be executed.
- * @return Returns 0 on success, -1 on failure.
+ * Return: 0 on success, -1 on failure.
  */
-void execute_command(const char *command)
+int execute_command(const char *command)
+{
+char *token = strtok((char *)command, " ");
 {
 pid_t child_pid = fork();
 
@@ -25,8 +30,6 @@ char *args[128];
 int arg_count = 0;
 
 execvp(args[0], args);
-
-char *token = strtok((char *)command, " ");
 while (token != NULL)
 {
 args[arg_count++] = token;
@@ -41,8 +44,8 @@ exit(EXIT_FAILURE);
 }
 else
 {
-int execute_command(const char *command)
-{
 wait(NULL);
+return 0;
+}
 }
 }
