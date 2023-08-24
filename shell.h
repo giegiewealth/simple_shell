@@ -1,7 +1,7 @@
 #ifndef SHELL_H
 #define SHELL_H
 /*
- *The kjxjhcjxh
+ *Nwq description
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -15,7 +15,7 @@
 void display_prompt(void);
 void leo_print(const char *message);
 void read_command(char *command, size_t size);
-int execute_command(const char *command);
+void execute_command(const char *command);
 
 
 
