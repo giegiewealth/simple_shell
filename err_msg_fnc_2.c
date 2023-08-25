@@ -2,6 +2,8 @@
 
 char *err_126(char **args);
 char *err_127(char **args);
+int histry;
+char *name;
 
 /**
 * err_126 - Creates an error message for permission denied failures.

@@ -2,6 +2,8 @@
 
 int cannot_open(char *file_path);
 int proc_file_comm(char *file_path, int *exe_ret);
+int histry;
+char *name;
 
 /**
 * cannot_open - If the file doesn't exist or lacks proper permissions, print

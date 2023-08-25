@@ -5,6 +5,7 @@ int retv_args(char **args, char **front, int *exe_ret);
 int init_arg(char **args, char **front, int *exe_ret);
 int args_handler(int *exe_ret);
 int args_checker(char **args);
+int histry;
 
 /**
 * get_args - Gets a command from standard input.
