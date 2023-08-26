@@ -22,38 +22,38 @@ char *name;
 int histry;
 
 /**
-* struct list_str - A new struct type defining a linked list.
-* @dir: A directory path.
-* @next: A pointer to another struct list_str.
-*/
+ * struct list_str - A new struct type defining a linked list.
+ * @dir: A directory path.
+ * @next: A pointer to another struct list_str.
+ */
 typedef struct list_str
 {
-char *dir;
-struct list_str *next;
+	char *dir;
+	struct list_str *next;
 } list_t;
 
 /**
-* struct builtin_s - A new struct type defining builtin commands.
-* @name: The name of the builtin command.
-* @f: A function pointer to the builtin command's function.
-*/
+ * struct builtin_s - A new struct type defining builtin commands.
+ * @name: The name of the builtin command.
+ * @f: A function pointer to the builtin command's function.
+ */
 typedef struct built_in_str
 {
-char *name;
-int (*f)(char **argv, char **front);
+	char *name;
+	int (*f)(char **argv, char **front);
 } builtin_t;
 
 /**
-* struct alias_str - A new struct defining aliases.
-* @name: The name of the alias.
-* @value: The value of the alias.
-* @next: A pointer to another struct alias_str.
-*/
+ * struct alias_str - A new struct defining aliases.
+ * @name: The name of the alias.
+ * @value: The value of the alias.
+ * @next: A pointer to another struct alias_str.
+ */
 typedef struct alias_str
 {
-char *name;
-char *value;
-struct alias_str *next;
+	char *name;
+	char *value;
+	struct alias_str *next;
 } alias_t;
 
 /* Global aliases linked list */
@@ -93,12 +93,12 @@ int _strncmp(const char *s1, const char *s2, size_t n);
 /* Builtins */
 int (*built_in_getter(char *command))(char **args, char **front);
 int sh_exit(char **args, char **front);
-int sh_env(char **args, char __attribute__((__unused__)) **front);
-int sh_setenv(char **args, char __attribute__((__unused__)) **front);
-int sh_unsetenv(char **args, char __attribute__((__unused__)) **front);
-int sh_cd(char **args, char __attribute__((__unused__)) **front);
-int sh_alias(char **args, char __attribute__((__unused__)) **front);
-int sh_help(char **args, char __attribute__((__unused__)) **front);
+int sh_env(char **args, char __attribute__((__unused__)) * *front);
+int sh_setenv(char **args, char __attribute__((__unused__)) * *front);
+int sh_unsetenv(char **args, char __attribute__((__unused__)) * *front);
+int sh_cd(char **args, char __attribute__((__unused__)) * *front);
+int sh_alias(char **args, char __attribute__((__unused__)) * *front);
+int sh_help(char **args, char __attribute__((__unused__)) * *front);
 
 /* Builtin Helpers */
 char **_copyenv(void);
