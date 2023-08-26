@@ -5,6 +5,9 @@ char *err_1(char **args);
 char *err_2_exit(char **args);
 char *err_2_cd(char **args);
 char *err_2_sntx(char **args);
+int histry;
+char *name;
+
 /**
 * err_env - Creates an error message for sh_env errors.
 * @args: An array of arguments passed to the command.

@@ -3,6 +3,7 @@
 int sh_env(char **args, char __attribute__((__unused__)) **front);
 int sh_setenv(char **args, char __attribute__((__unused__)) **front);
 int sh_unsetenv(char **args, char __attribute__((__unused__)) **front);
+char *name;
 
 /**
 * sh_env - Prints the current environment.

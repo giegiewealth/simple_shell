@@ -3,6 +3,7 @@
 int sh_alias(char **args, char __attribute__((__unused__)) **front);
 void set_alias(char *var_name, char *value);
 void print_alias(alias_t *alias);
+char *name;
 
 /**
 * sh_alias - Builtin command that either prints all aliases, specific

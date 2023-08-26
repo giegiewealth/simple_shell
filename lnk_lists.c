@@ -4,6 +4,7 @@ alias_t *alias_adder_end(alias_t **head, char *name, char *value);
 void alias_list_freer(alias_t *head);
 list_t *node_adder_end(list_t **head, char *dir);
 void list_freer(list_t *head);
+char *name;
 
 /**
 * alias_adder_end - Adds a node to the end of a alias_t linked list.

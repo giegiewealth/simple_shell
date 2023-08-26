@@ -2,6 +2,8 @@
 
 void handlle_signal(int sig);
 int execute(char **args, char **front);
+int histry;
+char *name;
 
 /**
  * handlle_signal - Prints a new prompt upon a signal.

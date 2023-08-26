@@ -17,9 +17,9 @@
 /* Global environemnt */
 extern char **environ;
 /* Global program name */
-char *name;
+/*char *name;*/
 /* Global history counter */
-int histry;
+/*int histry;*/
 
 /**
  * struct list_str - A new struct type defining a linked list.
@@ -33,10 +33,17 @@ typedef struct list_str
 } list_t;
 
 /**
+<<<<<<< HEAD
  * struct builtin_s - A new struct type defining builtin commands.
  * @name: The name of the builtin command.
  * @f: A function pointer to the builtin command's function.
  */
+=======
+* struct built_in_str - A new struct type defining built_in_str commands.
+* @name: The name of the builtin command.
+* @f: A function pointer to the builtin command's function.
+*/
+>>>>>>> 88b6743eb45b3d43eec14cfdcc8d54b4f96ad517
 typedef struct built_in_str
 {
 	char *name;
